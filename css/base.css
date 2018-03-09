@@ -1,4 +1,11 @@
-.page {
+body {
+	color:black;
+	background-color:white;
+	background-image:url(../img/camembert.png);
+	background-repeat:no-repeat;
+}
+
+.container {
 	font-family : Georgia,"Times New Roman",serif;
 }
 
