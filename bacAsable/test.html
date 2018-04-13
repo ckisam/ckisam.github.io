@@ -16,6 +16,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.container svg {
+  border: 5px solid red;
+}
 </style>
 </head>
 
@@ -38,18 +41,18 @@
 
     var projection = d3.geo.mercator()
     // The approximate scale factor was found through try and error
-    .scale(130)
+    .scale(width/8)
     // The geographical center of Switzerland is around 46.8°, 8.2°
     // https://de.wikipedia.org/wiki/Älggi-Alp
     //.center([8.226692, 46.80121])
     // Translate: Translate it to fit the container
-    .translate([width/2, height/2]);
+    .translate([width/2, 2*height/3]);
 
 
     var path = d3.geo.path()
     .projection(projection);
 
-    var url = "countries-land-10km.geo.json";
+    var url = "fond-carte.geo.json";
     d3.json(url, function(err, features) {
       //svg.append("path")
       //.attr("d", path(features));
