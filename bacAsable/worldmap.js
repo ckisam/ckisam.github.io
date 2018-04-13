@@ -56,6 +56,8 @@ $.getJSON('fond-carte.geo.json', function (geojson) {
                 enabled: true,
                 format: '{point.properties.postal}'
             }
-        }]
+        }],
+
+        exporting: { enabled: false }
     });
 });
