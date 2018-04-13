@@ -45,8 +45,9 @@
 		.container.text_graph {
 			width: 1200px;
 
-			padding-top: 20px;
-			padding-bottom: 20px
+			color:"red";
+			padding-top: 100px;
+			padding-bottom: 100px;
 		}
 
 /* Grid */
