@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Step 2: First map — data-map-d3 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="First%20Map_fichiers/alabaster.css" type="text/css">
+    <link rel="stylesheet" href="First%20Map_fichiers/pygments.css" type="text/css">
+    <link rel="stylesheet" href="First%20Map_fichiers/badge_only.css" type="text/css">
+    <link rel="stylesheet" href="First%20Map_fichiers/readthedocs-doc-embed.css" type="text/css">
+    
+    <script type="text/javascript" async="" src="First%20Map_fichiers/ga.js"></script><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="First%20Map_fichiers/jquery-2.js"></script>
+    <script type="text/javascript" src="First%20Map_fichiers/jquery-migrate-1.js"></script>
+    <script type="text/javascript" src="First%20Map_fichiers/underscore.js"></script>
+    <script type="text/javascript" src="First%20Map_fichiers/doctools.js"></script>
+    <script type="text/javascript" src="First%20Map_fichiers/readthedocs-doc-embed.js"></script>
+    <link rel="top" title="data-map-d3 1.0 documentation" href="http://data-map-d3.readthedocs.io/en/latest/index.html">
+    <link rel="next" title="Step 3: Dynamic map extent" href="http://data-map-d3.readthedocs.io/en/latest/steps/step_03.html">
+    <link rel="prev" title="Step 1: Basic document structure" href="http://data-map-d3.readthedocs.io/en/latest/steps/step_01.html">
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<!-- RTD Extra Head -->
+
+    
+    
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://data-map-d3.readthedocs.org/en/latest/steps/step_02.html">
+<script type="text/javascript">
+  // This is included here because other places don't have access to the pagename variable.
+  var READTHEDOCS_DATA = {
+    project: "data-map-d3",
+    version: "latest",
+    language: "en",
+    page: "steps/step_02",
+    builder: "sphinx",
+    theme: "alabaster",
+    docroot: "/docs/",
+    
+    source_suffix: ".rst",
+    
+    api_host: "https://readthedocs.org/",
+    commit: "be827dc0"
+  }
+  // Old variables
+  var doc_version = "latest";
+  var doc_slug = "data-map-d3";
+  var page_name = "steps/step_02";
+  var html_theme = "alabaster";
+</script>
+<!-- RTD Analytics Code -->
+<!-- Included in the header because you don't have a footer block. -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17997319-1']);
+  _gaq.push(['_trackPageview']);
+
+  // User Analytics Code
+  _gaq.push(['user._setAccount', 'None']);
+  _gaq.push(['user._trackPageview']);
+  // End User Analytics Code
+
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- end RTD Analytics Code -->
+<!-- end RTD <extrahead> -->
+
+  <link id="avast_os_ext_custom_font" href="First%20Map_fichiers/css_003.css" rel="stylesheet" type="text/css"><link href="First%20Map_fichiers/css_002.css" rel="stylesheet" type="text/css"><link href="First%20Map_fichiers/css.css" rel="stylesheet" type="text/css"><link href="First%20Map_fichiers/css_004.css" rel="stylesheet" type="text/css"><style id="wrc-css" type="text/css">.wrcx {display:none} .r .wrcx,  .fc .wrcx, #rhsline ol .wrcx {display:inline-block !important; position:relative !important; background: url("moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/serp-none.png") right no-repeat},.wrcx {display:none} .osl .wrcx, .vresult .r, .tl .r .wrcx{ display: none;}
+.wrc0 {display:none} .r .wrc0,  .fc .wrc0, #rhsline ol .wrc0 {display:inline-block !important; position:relative !important; background: url("moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/serp-none.png") right no-repeat},.wrc0 {display:none} .osl .wrc0, .vresult .r, .tl .r .wrc0{ display: none;}
+.wrc1 {display:none} .r .wrc1,  .fc .wrc1, #rhsline ol .wrc1 {display:inline-block !important; position:relative !important; background: url("moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/serp-ok.png") right no-repeat},.wrc1 {display:none} .osl .wrc1, .vresult .r, .tl .r .wrc1{ display: none;}
+.wrc2 {display:none} .r .wrc2,  .fc .wrc2, #rhsline ol .wrc2 {display:inline-block !important; position:relative !important; background: url("moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/serp-attention.png") right no-repeat},.wrc2 {display:none} .osl .wrc2, .vresult .r, .tl .r .wrc2{ display: none;}
+.wrc3 {display:none} .r .wrc3,  .fc .wrc3, #rhsline ol .wrc3 {display:inline-block !important; position:relative !important; background: url("moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/serp-error.png") right no-repeat},.wrc3 {display:none} .osl .wrc3, .vresult .r, .tl .r .wrc3{ display: none;}
+#wrcHoverDiv .aos-tooltip-logo-img { background-image: url(moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/logo-white.png); }
+#wrcHoverDiv .aos-tooltip-attention .aos-tooltip-logo-img { background-image: url(moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/logo-dark.png); }</style></head>
+  <body role="document"><div id="wrcHoverDiv"><div id="wrccontainer" class="aos-tooltip"><div class="aos-tooltip-arrow"></div><a class="aos-tooltip-logo"><span class="aos-tooltip-logo-img"></span><span class="aos-tooltip-logo-text">Online Security</span></a><div id="wrcratingicon" class="aos-tooltip-icon" style="background-image: url(&quot;moz-extension://c6ccaca4-a712-4d14-8025-82d836c69e20/common/ui/icons/unknown.png&quot;);"></div><div id="wrcratingtext" class="aos-tooltip-text">Ce site n'a pas été évalué</div></div></div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="step-2-first-map">
+<span id="step-02"></span><h1>Step 2: First map<a class="headerlink" href="#step-2-first-map" title="Permalink to this headline">¶</a></h1>
+<p>In this step, we will prepare the geographic data and display it on the map for the first time.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#preparation-of-geographic-data" id="id3">Preparation of geographic data</a><ul>
+<li><a class="reference internal" href="#download" id="id4">Download</a></li>
+<li><a class="reference internal" href="#data-structure" id="id5">Data structure</a></li>
+<li><a class="reference internal" href="#qgis" id="id6">QGIS</a></li>
+<li><a class="reference internal" href="#remove-unnecessary-attributes" id="id7">Remove unnecessary attributes</a></li>
+<li><a class="reference internal" href="#export-as-geojson" id="id8">Export as GeoJSON</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#show-features-on-map" id="id9">Show features on map</a></li>
+<li><a class="reference internal" href="#code" id="id10">Code</a></li>
+</ul>
+</div>
+<div class="section" id="preparation-of-geographic-data">
+<h2><a class="toc-backref" href="#id3">Preparation of geographic data</a><a class="headerlink" href="#preparation-of-geographic-data" title="Permalink to this headline">¶</a></h2>
+<p>For this tutorial, we use data for Switzerland. The geographical base units are the <a class="reference external" href="https://en.wikipedia.org/wiki/Municipalities_of_Switzerland" wrc_done="true">Municipalities of Switzerland</a><span class="wrc1 wrc_icon wrc_injected"></span>.
+ The boundaries of these municipalities can be downloaded as Shapefiles.
+ The preparation consists of using QGIS to remove unccessary attributes 
+and save the geometries as GeoJSON.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If you want to skip the data preparation steps, you can create a new folder <code class="docutils literal"><span class="pre">data</span></code> in your working directory, download the <a class="reference external" href="https://raw.githubusercontent.com/lvonlanthen/data-map-d3/master/data/ch_municipalities.geojson" wrc_done="true">GeoJSON file</a><span class="wrc1 wrc_icon wrc_injected"></span> (right-click, save as ...) from the repository and save it to <code class="docutils literal"><span class="pre">data/ch_municipalities.geojson</span></code>. You can then proceed to the section <a class="reference internal" href="#show-features-on-map"><span>Show features on map</span></a>.</p>
+</div>
+<div class="section" id="download">
+<h3><a class="toc-backref" href="#id4">Download</a><a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
+<p>Download the data from <a class="reference external" href="http://www.bfs.admin.ch/bfs/portal/de/index/dienstleistungen/geostat/datenbeschreibung/generalisierte_gemeindegrenzen.html" wrc_done="true">GEOSTAT</a><span class="wrc0 wrc_icon wrc_injected"></span>
+ of the Swiss Federal Statistical Office. Make sure to download the file
+ named “Generalisierte Gemeindegrenzen: Geodaten” (gd-b-00.03-877-gg14) 
+for the year <strong>2014</strong>.</p>
+<p>Once the file was downloaded, extract the ZIP file.</p>
+</div>
+<div class="section" id="data-structure">
+<h3><a class="toc-backref" href="#id5">Data structure</a><a class="headerlink" href="#data-structure" title="Permalink to this headline">¶</a></h3>
+<p>The zip file contains several files and folders. The folder <code class="docutils literal"><span class="pre">ggg_2014</span></code> contains the generalized municipality boundaries in various formats. We will work with Shapefiles (<code class="docutils literal"><span class="pre">shp</span></code>).</p>
+<p>For each format, there are different files such as <code class="docutils literal"><span class="pre">g1b14.shp</span></code> or <code class="docutils literal"><span class="pre">g2g14.shp</span></code>.</p>
+<ul class="simple">
+<li>The first two characters indicate the level of <a class="reference external" href="https://en.wikipedia.org/wiki/Cartographic_generalization" wrc_done="true">cartographic generalization</a><span class="wrc1 wrc_icon wrc_injected"></span>, where <code class="docutils literal"><span class="pre">g2</span></code> is more generalized (meaning less details and smaller files) than <code class="docutils literal"><span class="pre">g1</span></code>.</li>
+<li>The next letter indicates the type of geometry:<ul>
+<li><code class="docutils literal"><span class="pre">g</span></code> (Gemeinden): Municipalities or Communes</li>
+<li><code class="docutils literal"><span class="pre">b</span></code> (Bezirke): Districts</li>
+<li><code class="docutils literal"><span class="pre">k</span></code> (Kantone): Cantons</li>
+<li><code class="docutils literal"><span class="pre">r</span></code> (Grossregionen): Regions</li>
+<li><code class="docutils literal"><span class="pre">l</span></code> (Landesgrenzen): Country</li>
+</ul>
+</li>
+</ul>
+<p>More information on the files can be found in the metadata file (available only in german or french).</p>
+<p>For this tutorial, we will use the boundaries of municipalities. As 
+the very detailed boundaries are not that important, we can use the <code class="docutils literal"><span class="pre">g2</span></code> generalization level. Therefore, we will work with the file <code class="docutils literal"><span class="pre">ggg_2014/shp/g2g14.shp</span></code>.</p>
+</div>
+<div class="section" id="qgis">
+<h3><a class="toc-backref" href="#id6">QGIS</a><a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h3>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">We will work with the open source GIS software <a class="reference external" href="http://www.qgis.org/" wrc_done="true">QGIS</a><span class="wrc1 wrc_icon wrc_injected"></span>.
+ If you do not have a GIS software installed, it is recommended that you
+ download and install QGIS. If you already have another GIS software, 
+you can work with the one you are more familiar with. However, the 
+following steps are written for QGIS.</p>
+</div>
+<p>Open the file <code class="docutils literal"><span class="pre">ggg_2014/shp/g2g14.shp</span></code> in QGIS.</p>
+</div>
+<div class="section" id="remove-unnecessary-attributes">
+<h3><a class="toc-backref" href="#id7">Remove unnecessary attributes</a><a class="headerlink" href="#remove-unnecessary-attributes" title="Permalink to this headline">¶</a></h3>
+<p>Since we will only need the geometries of the municipalities, we can 
+delete columns of the Shapefile which are not needed. This will help to 
+reduce the file size of the resulting GeoJSON.</p>
+<p>There is a plugin called “Table Manager Plugin” which can be 
+installed and used to delete the unnecessary columns. You can delete all
+ columns except <code class="docutils literal"><span class="pre">GMDNR</span></code> (the ID of the municipality) and <code class="docutils literal"><span class="pre">GMDNAME</span></code> (the name of the municipality).</p>
+<p>It is recommended that you save the resulting Shapefile under a new 
+file name to not modify the original file. QGIS will automatically add 
+the new Shapefile to the map.</p>
+</div>
+<div class="section" id="export-as-geojson">
+<h3><a class="toc-backref" href="#id8">Export as GeoJSON</a><a class="headerlink" href="#export-as-geojson" title="Permalink to this headline">¶</a></h3>
+<p>To export the Shapefile as GeoJSON make sure the correct file (the one without unnecessary attributes) is selected in QGIS.</p>
+<p>Use right-click on the file and select “Save as” which opens a dialog box and you can set the following parameters:</p>
+<ul>
+<li><p class="first">Format: GeoJSON</p>
+</li>
+<li><p class="first">Save as: [working_directory]/data/ch_municipalities.geojson</p>
+<blockquote>
+<div><p><em>Navigate to your working directory (where you placed your 
+index.html file), create a new folder “data” and save the file as 
+“ch_municipalities.geojson”.</em></p>
+</div></blockquote>
+</li>
+<li><p class="first">CRS: “Selected CRS” and browse to select “WGS 84” (you can filter by “EPSG:4326”)</p>
+</li>
+<li><p class="first">Additionally, set the following parameters:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Encoding: UTF-8</p>
+</li>
+<li><p class="first">Layer Options &gt; COORDINATE_PRECISION: 3</p>
+<blockquote>
+<div><p><em>This will help to reduce the file size</em></p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Then click OK to export the Shapefile as GeoJSON.</p>
+</div>
+</div>
+<div class="section" id="show-features-on-map">
+<span id="id1"></span><h2><a class="toc-backref" href="#id9">Show features on map</a><a class="headerlink" href="#show-features-on-map" title="Permalink to this headline">¶</a></h2>
+<p>Now we would like to display the GeoJSON on the map.</p>
+<div class="literal-block-wrapper container" id="map-js-a-first-map">
+<div class="code-block-caption"><span class="caption-text">map.js - a first map</span><a class="headerlink" href="#map-js-a-first-map" title="Permalink to this code">¶</a></div>
+<div class="highlight-js"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1">// We specify the dimensions for the map container. We use the same</span>
+<span class="c1">// width and height as specified in the CSS above.</span>
+<span class="kd">var</span> <span class="nx">width</span> <span class="o">=</span> <span class="mi">900</span><span class="p">,</span>
+    <span class="nx">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>
+
+<span class="c1">// We create a SVG element in the map container and give it some</span>
+<span class="c1">// dimensions.</span>
+<span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'#map'</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">'svg'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'width'</span><span class="p">,</span> <span class="nx">width</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'height'</span><span class="p">,</span> <span class="nx">height</span><span class="p">);</span>
+
+<span class="c1">// We define a geographical projection</span>
+<span class="c1">//     https://github.com/mbostock/d3/wiki/Geo-Projections</span>
+<span class="c1">// and set the initial zoom to show the features.</span>
+<span class="kd">var</span> <span class="nx">projection</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">mercator</span><span class="p">()</span>
+  <span class="c1">// The approximate scale factor was found through try and error</span>
+  <span class="p">.</span><span class="nx">scale</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+  <span class="c1">// The geographical center of Switzerland is around 46.8°, 8.2°</span>
+  <span class="c1">//     https://de.wikipedia.org/wiki/Älggi-Alp</span>
+  <span class="p">.</span><span class="nx">center</span><span class="p">([</span><span class="mf">8.226692</span><span class="p">,</span> <span class="mf">46.80121</span><span class="p">])</span>
+  <span class="c1">// Translate: Translate it to fit the container</span>
+  <span class="p">.</span><span class="nx">translate</span><span class="p">([</span><span class="nx">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">]);</span>
+
+<span class="c1">// We prepare a path object and apply the projection to it.</span>
+<span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">geo</span><span class="p">.</span><span class="nx">path</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">projection</span><span class="p">(</span><span class="nx">projection</span><span class="p">);</span>
+
+<span class="c1">// Load the features from the GeoJSON.</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="s1">'data/ch_municipalities.geojson'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">features</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="c1">// We add a &lt;g&gt; element to the SVG element and give it a class to</span>
+  <span class="c1">// style it later.</span>
+  <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">'g'</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'class'</span><span class="p">,</span> <span class="s1">'features'</span><span class="p">)</span>
+    <span class="c1">// D3 wants us to select the (non-existing) path objects first ...</span>
+    <span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>
+      <span class="c1">// ... and then enter the data. For each feature, a &lt;path&gt; element</span>
+      <span class="c1">// is added.</span>
+      <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">features</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">().</span><span class="nx">append</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>
+      <span class="c1">// As "d" attribute, we set the path of the feature.</span>
+      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'d'</span><span class="p">,</span> <span class="nx">path</span><span class="p">);</span>
+
+<span class="p">});</span>
+</pre></div>
+</td></tr></tbody></table></div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">If you are using Chrome, you may not see the map. 
+Instead, you may see an error message in the console saying that the 
+GeoJSON file could not be loaded because cross origin requests are not 
+supported. In this case, you either have to run a web server locally or 
+use a different browser (eg. Firefox).</p>
+</div>
+<p class="rubric">Next</p>
+<p>Proceed to <a class="reference internal" href="http://data-map-d3.readthedocs.io/en/latest/steps/step_03.html#step-03"><span>Step 3: Dynamic map extent</span></a>.</p>
+</div>
+<div class="section" id="code">
+<h2><a class="toc-backref" href="#id10">Code</a><a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>For reference, the file <code class="docutils literal"><span class="pre">index.html</span></code> after step 2:</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/lvonlanthen/data-map-d3/blob/step-02/index.html" wrc_done="true">https://github.com/lvonlanthen/data-map-d3/blob/step-02/index.html</a><span class="wrc1 wrc_icon wrc_injected"></span></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For reference, the file <code class="docutils literal"><span class="pre">style.css</span></code> after step 2:</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/lvonlanthen/data-map-d3/blob/step-02/style.css" wrc_done="true">https://github.com/lvonlanthen/data-map-d3/blob/step-02/style.css</a><span class="wrc1 wrc_icon wrc_injected"></span></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For reference, the file <code class="docutils literal"><span class="pre">map.js</span></code> after step 2:</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/lvonlanthen/data-map-d3/blob/step-02/map.js" wrc_done="true">https://github.com/lvonlanthen/data-map-d3/blob/step-02/map.js</a><span class="wrc1 wrc_icon wrc_injected"></span></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The diff view of step 1 and step 2:</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/lvonlanthen/data-map-d3/compare/step-01...step-02?diff=split" wrc_done="true">https://github.com/lvonlanthen/data-map-d3/compare/step-01...step-02?diff=split</a><span class="wrc1 wrc_icon wrc_injected"></span></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          <div id="rtd-c3x1jfpsh" class="ethical-alabaster"></div></div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="http://data-map-d3.readthedocs.io/en/latest/index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Step 2: First map</a><ul>
+<li><a class="reference internal" href="#preparation-of-geographic-data">Preparation of geographic data</a><ul>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#data-structure">Data structure</a></li>
+<li><a class="reference internal" href="#qgis">QGIS</a></li>
+<li><a class="reference internal" href="#remove-unnecessary-attributes">Remove unnecessary attributes</a></li>
+<li><a class="reference internal" href="#export-as-geojson">Export as GeoJSON</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#show-features-on-map">Show features on map</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="http://data-map-d3.readthedocs.io/en/latest/index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="http://data-map-d3.readthedocs.io/en/latest/steps/step_01.html" title="previous chapter">Step 1: Basic document structure</a></li>
+      <li>Next: <a href="http://data-map-d3.readthedocs.io/en/latest/steps/step_03.html" title="next chapter">Step 3: Dynamic map extent</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="http://data-map-d3.readthedocs.io/en/latest/_sources/steps/step_02.txt" rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input name="q" type="text">
+      <input value="Go" type="submit">
+      <input name="check_keywords" value="yes" type="hidden">
+      <input name="area" value="default" type="hidden">
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <div id="rtd-4m55dso5" class="ethical-alabaster"><div class="ethical-sidebar"><div class="ethical-content"><a href="https://readthedocs.org/sustainability/click/238/W7d7jM3yMKUb/" class="ethical-image-link" wrc_done="true"><img src="First%20Map_fichiers/a.png"></a><span class="wrc0 wrc_icon wrc_injected"></span><div class="ethical-text">Starting a new project? <a href="https://readthedocs.org/sustainability/click/238/W7d7jM3yMKUb/" rel="nofollow" target="_blank" wrc_done="true">Deploy to DigitalOcean for free with a 60 day trial.</a><span class="wrc0 wrc_icon wrc_injected"></span></div></div><div class="ethical-callout"><small><em><a href="https://readthedocs.org/sustainability/advertising/" wrc_done="true">Sponsored</a><span class="wrc0 wrc_icon wrc_injected"></span><span> · </span><a href="https://docs.readthedocs.io/en/latest/ethical-advertising.html" wrc_done="true">Ads served ethically</a><span class="wrc0 wrc_icon wrc_injected"></span></em></small></div></div></div></div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      ©2016, Lukas Vonlanthen.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/" wrc_done="true">Sphinx 1.3.4</a><span class="wrc0 wrc_icon wrc_injected"></span>
+      &amp; <a href="https://github.com/bitprophet/alabaster" wrc_done="true">Alabaster 0.7.7</a><span class="wrc1 wrc_icon wrc_injected"></span>
+      
+      |
+      <a href="http://data-map-d3.readthedocs.io/en/latest/_sources/steps/step_02.txt" rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  
+<!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+  <div class="rst-versions rst-badge" data-toggle="rst-versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">&nbsp;</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+
+      
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="http://data-map-d3.readthedocs.io/en/latest/steps/step_02.html">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="http://readthedocs.org/projects/data-map-d3/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/data-map-d3/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/data-map-d3/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="http://readthedocs.org/projects/data-map-d3/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/data-map-d3/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/data-map-d3/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/lvonlanthen/data-map-d3/blob/master/docs/steps/step_02.rst" wrc_done="true">View</a><span class="wrc1 wrc_icon wrc_injected"></span>
+        </dd>
+        <dd>
+          <a href="https://github.com/lvonlanthen/data-map-d3/edit/master/docs/steps/step_02.rst" wrc_done="true">Edit</a><span class="wrc1 wrc_icon wrc_injected"></span>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="//readthedocs.org/projects/data-map-d3/search/" method="get">
+              <input name="q" placeholder="Search docs" type="text">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+      Free document hosting provided by <a href="https://readthedocs.org/" wrc_done="true">Read the Docs</a><span class="wrc0 wrc_icon wrc_injected"></span>.
+      
+
+      
+    </div>
+  </div>
+  
+
+</div>
+</body></html>

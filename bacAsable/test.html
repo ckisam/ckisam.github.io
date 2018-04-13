@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Carte du monde</title>
+  <!--
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+-->
+<script src="js/jquery.min.js"></script>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+-->
+<script src="js/d3.min.js"></script>
+<style>
+.container {
+  width : 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container svg {
+  border: 5px solid red;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="container"></div>
+
+  <script>
+
+  $(document).ready(function() {
+
+    //var width = 960;
+    //var height = 500;
+    var width = $(".container").width();
+    var height = .5 * width;
+
+    var svg = d3.select(".container").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+    var projection = d3.geo.mercator()
+    // The approximate scale factor was found through try and error
+    .scale(width/8)
+    // The geographical center of Switzerland is around 46.8°, 8.2°
+    // https://de.wikipedia.org/wiki/Älggi-Alp
+    //.center([8.226692, 46.80121])
+    // Translate: Translate it to fit the container
+    .translate([width/2, 2*height/3]);
+
+
+    var path = d3.geo.path()
+    .projection(projection);
+
+    var url = "fond-carte.geo.json";
+    d3.json(url, function(err, features) {
+      //svg.append("path")
+      //.attr("d", path(features));
+
+      svg.append('g')
+      .attr("width", width)
+      .attr("height", height)
+      .attr('class', 'features')
+      // D3 wants us to select the (non-existing) path objects first ...
+      .selectAll('path')
+      // ... and then enter the data. For each feature, a <path> element
+      // is added.
+      .data(features.features).enter()
+      .append('path')
+      // As "d" attribute, we set the path of the feature.
+      .attr('d', path)
+      .attr("width", width)
+      .attr("height", height);
+
+      // points
+      paris = [2.7905, 48.8042];
+
+      svg.selectAll("circle")
+      .data([paris]).enter()
+      .append("circle")
+      .attr("cx", function (d) { console.log(projection(d)); return projection(d)[0]; })
+      .attr("cy", function (d) { return projection(d)[1]; })
+      .attr("r", "8px")
+      .attr("fill", "red")
+
+    });
+
+  });
+
+  </script>
+</body>
