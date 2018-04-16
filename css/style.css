@@ -14,6 +14,7 @@
 		background: #fff;
 	}
 
+
 	body, input, select, textarea {
 		color: #555f66;
 		font-family: "Roboto", Helvetica, sans-serif;
@@ -832,6 +833,17 @@
 			color: #fff !important;
 			cursor: default;
 			opacity: 0.25;
+		}
+
+/* Texte sous les graphes */
+
+		.text_graph {
+			margin-left: auto;
+			margin-right: auto;
+			width: 960px;
+			/*background-color: red; */
+			padding-top: 2em;
+			padding-bottom: 2em;
 		}
 
 /* Wrapper */
