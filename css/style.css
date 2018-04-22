@@ -846,6 +846,17 @@
 			padding-bottom: 2em;
 		}
 
+		.meth {
+			margin-left: auto;
+			margin-right: auto;
+			width: 960px;
+			padding-top: 2em;
+			padding-bottom: 2em;
+			font-style: italic;
+			font-size: .9em;
+			color: grey;
+		}
+
 /* Wrapper */
 
 	.wrapper {

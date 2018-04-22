@@ -37,7 +37,8 @@
 		<script src="https://code.highcharts.com/mapdata/custom/world-palestine.js"></script>
 		<script src="https://code.highcharts.com/modules/series-label.js"></script>
 		<script src="js/base.js"></script>
-		<script src="js/base_cor.js"></script>
+		<!--<script src="js/base_cor.js"></script>-->
+		<script src="js/map_evol.js"></script>
 		<script src="js/line_reg.js"></script>
 		<script src="js/evol_base.js"></script>
 		<script src="js/action.js"></script>
@@ -79,7 +80,7 @@
 			<section id="one" class="wrapper style2">
 				<div class = "text_graph">
 					<p>
-						Le 11 septembre 2001, l'opinion publique mondiale a été sidérée devant les vidéos des deux Boeings d'<em>American</em> et <em>United Airlines</em> se crachant dans les tours jumelles du <em>World Trade Center</em>, à New York City.
+						Le 11 septembre 2001, l'opinion publique mondiale a été sidérée devant les vidéos des deux Boeings d'<em>American</em> et <em>United Airlines</em> se crachant dans les tours jumelles du <em>World Trade Center</em>, à New York.
 						À l'occasion, les pays occidentaux se sont rappelés qu'ils pouvaient eux aussi être le théâtre d'attentats de grande ampleur, et que des centaines — voire des milliers — de leurs citoyens pouvaient y laisser leur vie.
 						La vague d'attentats qui a touché l'Europe de l'Ouest à partir de l'année 2015 a renforcé cette peur, et avec elle les sentiments xénophobes, notamment envers les individus supposément identifiés comme musulmans. Elle a aussi conduit les gouvernements à mettre en place des lois permettant un contrôle accru des libertés publiques dans l'objectif proclamé est de protéger les citoyens des menaces terroristes.
 					</p>
@@ -91,34 +92,36 @@
 						Qu'en est-il réellement ? Les attentats terroristes sont-ils vraiment devenus une réalité essentiellement ouest-européenne et nord-américaine depuis 2001 ?
 					</p>
 				</div>
+				<div class = "meth">
+					<p>
+						L'ensemble des résultats présentés sur cette page ont été obtenus à partir de la <em><a href="http://www.start.umd.edu/gtd/">Global Terrorism Database</a></em> (GTD), une base de données libre de droits qui recense les attentas terroristes entre 1970 et 2016 de manière systématique.
+						Elle est constituée, mise à jour et mise à disposition du public par le Consortium national pour l'étude du terrorisme et des réponses face au terrorisme (START), un centre d'excellence du ministère de la sécurité intérieur états-unien hébergé par l'université du Maryland.
+					</p>
+					<p>
+						Sont considérés comme des actes terroristes les faits d'usage et de menace d'usage illégal de la force et de la violence par des acteurs non-étatiques dans un but politique, économique, religieux ou social en mobilisant la peur, la coercition ou l'intimidation.
+					</p>
+				</div>
 			</section>
 
 		<!-- Two -->
 			<section id="two" class="wrapper style1">
 				<header class="major">
-					<h2>Une augmentation du nombre d'attaque depuis 20 ans</h2>
+					<h3>L'évolution mondiale des attaques terroristes en un coup d'œil</h3>
 				</header>
 				<div class="container">
+					<p>
+						Après avoir été un phénomène marginal jusqu'au milieu des années 1970 (quasiment aucun événement), les attentats terroristes prennent davantage d'importance, puisque qu'entre 2 000 et 5 000 attentats ont lieu chaque années [courbe bleue]. Ce nombre reste cependant relativement stable au cours du temps.
+						À partir du milieu des années 2000, le phénomène s'intensifie davantage et suit une dynamique de hausse soutenue, jusqu'à dépasser les 16 000 événements en 2014.
+					</p>
+					<p>
+						L'évolution du nombre de victimes suit globalement les mêmes tendances [courbe noire]. L'augmentation du nombre de victimes à partir de 2010 est cependant bien plus marquée que pour le nombre d'attentas, puisqu'on passe d'un peu plus de 8 000 victimes à plus de 43 000 en l'espace de trois ans.
+					</p>
 					<div id="evol_nb"></div>
+					<p>
+						En fait, deux pays contribuent tout particulièrement à cette intensification de l'activité terroriste sur la dernière décennies : l'Irak et l'Afghanistan.
+						Lorsque l'on omet les événements de ces deux pays [courbes verte et orange], les augmentations — toujours bien visibles — sont sensiblement plus modérées.
+					</p>
 					<div id="evol_nb_cor"></div>
-				</div>
-				<div class = "text_graph">
-					<p>
-						Tempus adipiscing commodo ut aliquam blandit
-						Tempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blandit
-					</p>
-				</div>
-
-				<!-- Courbes Julien -->
-				<div class="container">
-					<div id="evol_nb_region"></div>
-					Le joli graphique de Julien, par région.
-				</div>
-				<div class = "text_graph">
-					<p>
-						Tempus adipiscing commodo ut aliquam blandit
-						Tempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blandit
-					</p>
 				</div>
 			</section>
 
@@ -129,8 +132,7 @@
 					<p>Evolution temporelle de la répartition géographique des victimes d'attentats</p>
 				</header>
 				<div class="container">
-					<div id="line_reg"></div>
-					<div id="evol_base"></div>
+					<div id="map_evol"></div>
 				</div>
 				<div class = "text_graph">
 					<p>
