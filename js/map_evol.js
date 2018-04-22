@@ -22,7 +22,7 @@ $(function () {
     },
     yAxis: {
         title: {
-            text: '%'
+            text: "% des victimes d'attentats terroristes"
         }
     },
     tooltip: {

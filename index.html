@@ -34,17 +34,11 @@
 		<script src="https://code.highcharts.com/modules/sankey.js"></script>
 		<script src="http://code.highcharts.com/maps/highmaps.js"></script>
 		<script src="http://code.highcharts.com/maps/modules/map.js"></script>
-		<script src="https://code.highcharts.com/mapdata/custom/world-palestine.js"></script>
 		<script src="https://code.highcharts.com/modules/series-label.js"></script>
 		<script src="js/base.js"></script>
-		<!--<script src="js/base_cor.js"></script>-->
 		<script src="js/map_evol.js"></script>
 		<script src="js/line_reg.js"></script>
 		<script src="js/evol_base.js"></script>
-		<script src="js/action.js"></script>
-		<script src="js/weapon.js"></script>
-		<script src="js/vicrate_reg.js"></script>
-		<script src="js/vicrate.js"></script>
 
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
@@ -106,9 +100,11 @@
 		<!-- Two -->
 			<section id="two" class="wrapper style1">
 				<header class="major">
-					<h3>L'évolution mondiale des attaques terroristes en un coup d'œil</h3>
+					<h2>Les attaques terroristes en un coup d'œil</h2>
+					<h3>Une augmentation massive du nombre d'attaques et de victimes depuis 2 décennies</h3>
 				</header>
 				<div class="container">
+					<div id="evol_nb"></div>
 					<p>
 						Après avoir été un phénomène marginal jusqu'au milieu des années 1970 (quasiment aucun événement), les attentats terroristes prennent davantage d'importance, puisque qu'entre 2 000 et 5 000 attentats ont lieu chaque années [courbe bleue]. Ce nombre reste cependant relativement stable au cours du temps.
 						À partir du milieu des années 2000, le phénomène s'intensifie davantage et suit une dynamique de hausse soutenue, jusqu'à dépasser les 16 000 événements en 2014.
@@ -116,50 +112,119 @@
 					<p>
 						L'évolution du nombre de victimes suit globalement les mêmes tendances [courbe noire]. L'augmentation du nombre de victimes à partir de 2010 est cependant bien plus marquée que pour le nombre d'attentas, puisqu'on passe d'un peu plus de 8 000 victimes à plus de 43 000 en l'espace de trois ans.
 					</p>
-					<div id="evol_nb"></div>
+					<div id="evol_nb_cor"></div>
 					<p>
 						En fait, deux pays contribuent tout particulièrement à cette intensification de l'activité terroriste sur la dernière décennies : l'Irak et l'Afghanistan.
 						Lorsque l'on omet les événements de ces deux pays [courbes verte et orange], les augmentations — toujours bien visibles — sont sensiblement plus modérées.
 					</p>
-					<div id="evol_nb_cor"></div>
+					<p>
+						Ces évolutions globales ne disent rien de la répartition géographique des attentats terroristes et de leurs victimes.
+						Pourtant, les différentes parties du monde ne sont pas toutes logées à la même enseigne…
+					</p>
+					<!-- Placer la carte + son commentaire ici -->
 				</div>
 			</section>
 
 		<!-- Three -->
 			<section id="three" class="wrapper style2">
 				<header class="major">
-					<h2>Où sont les victimes des attentats dans le monde</h2>
-					<p>Evolution temporelle de la répartition géographique des victimes d'attentats</p>
+					<h2>Une géographie mouvante</h2>
+					<p>L'Afrique, le Moyen Orient et l'Asie du Sud concentrent les victimes des dernières décennies</p>
 				</header>
 				<div class="container">
 					<div id="map_evol"></div>
 				</div>
 				<div class = "text_graph">
 					<p>
-						Au cours des cinquantes dernières années, et des évolulutions mondiales et notamment des guerres, les victimes du terrorisme ont changé.
-						Lors de la guerre froide, l'Europe se trouvait être la zone la plus touchée par le terrorisme. Au cours des années 80, la menace s'est peu a peu déplacée vers l'Amérique du Sud notamment avec l'émergence de groupes locaux.
-						Par la suite, depuis la fin des années 90, les attaques se retrouvent majoritairement en Afrique et au Moyen Orient ainsi qu'en Asie du Sud.
+						Il est frappant d'observer à quel point la géographie du terrorisme évolue au cours du temps : les régions les plus touchées hier ne sont pas celles qui sont le plus touchées aujourd'hui. Autrement dit, il n'y a pas de terres marquées par essence par le fait terroriste.
+						Dans les années 1970, c'est l'Europe qui concentre l'essentiel des victimes d'attentats. Dans les années 1980, le centre de gravité se déplace en Amérique du Sud.
+						À partir des années 1990, les victimes sont pour la plupart à déplorer en Asie du Sud, et surtout en Afrique et au Moyen Orient. Après 2005, en particulier, la quasi totalité des victimes de terrorisme sont issues de ces zones (plus de 98% en 2016).
+						Tout au long de la période, l'Amérique du Nord apparaît comme étant relativement épargnée. La seule exception véritable est 2001 [gros losange gris, sur le graphique], année au cours de laquelle quasiment 40% des victimes du terrorisme dans le monde sont à déplorer dans cette région.
 					</p>
+					<p>
+						S'il est vrai que l'Europe a bien été le foyer des attaques terroristes au début de la période, depuis les années 1980, l'écrasante majorité des victimes est à déplorer dans d'autres régions du monde que les pays occidentaux.
+						Contrairement au sens commun, l'Europe et l'Amérique du Nord ne sont pas devenus récemment les centres du terrorisme mondial mais ont au contraire perdu ce statut, transféré à l'Asie du Sud et surtout à l'Afrique et au Moyen Orient.
+					</p>
+					<p>
+						Mais alors, comment comprendre l'impression d'une intensification de l'activité terroriste en Europe et en Amérique du Nord par rapport au reste du monde ?
+						Peut-être que la forme prise par les attentats des dernières décennies a changé, marquant davantage les esprits qu'auparavant ?
 				</div>
 			</section>
 
 		<!-- Four -->
-			<section id="four" class="wrapper style1">
+			<section class="wrapper style1">
 				<header class="major">
-					<h2>Commodo accumsan aliquam</h2>
-					<p>Amet nisi nunc lorem accumsan</p>
+					<h2>Quels types d'attentats ?</h2>
+					<p>Des modes d'action stables dans le temps</p>
+				</header>
+				<div class="container">
+					<div id="action"></div>
+				</div>
+				<div class = "text_graph">
+					<p>
+						La structure des attaques terroristes en fonction du type d'attaque ne change pas fondamentalement au cours du temps depuis 1970.
+						Les attaques à l'explosif — peut-être plus impressionnants pour le spectateur — tendent à se généraliser (50% des attentats), notamment aux dépens des assassinats, mais ils ont toujours représentés plus du tiers des attaques.
+						Les assauts armés, caractéristiques des attentats les plus récents (et médiatisés) en France, n'ont pas connu d'augmentation particulière au cours des dernières décennies.
+					</p>
+					<p>
+						Les attentats ne changent donc pas fondamentalement de forme au cours du temps, mais peut-être deviennent-ils plus meurtriers ?
+					</p>
+				</div>
+			</section>
+
+			<section class="wrapper style2">
+				<header class="major">
+					<h2>Des attentats plus meurtriers…</h2>
+					<p>…mais pas en Europe</p>
+				</header>
+				<div class="container">
+					<div id="vicrate"></div>
+					<br/>
+					<p>
+						On observe une tendance claire à la hausse du nombre de victimes par attentat.
+						En 1970, seul une attaque sur 5 fait une victime, alors qu'en 2016, chaque attentat fait en moyenne entre 2 et 3 victimes.
+					</p>
+					<p>
+						Les attentats terroristes sont donc de plus en plus meurtriers. Mais cette évolution est-elle identique dans toutes les régions du monde ?
+					</p>
+					<div id="vicrate_reg"></div>
+					<br/>
+					<p>
+						A priori, il est difficile d'observer des différences entre régions.
+						C'est essentiellement le fait de l'attentat du 11 septembre 2001, à New York, de loin le plus meurtrier de l'histoire, avec plus de 3 000 morts. Il fait augmenter la moyenne de l'Amérique du Nord en 2001 de manière très importante.
+					</p>
+					<p>
+						Que se passe-t-il si, pour observer les autres évolutions, on ne prend pas en compte l'Amérique du Nord ? (On a aussi omis le groupe des « Autres régions ».)
+					</p>
+					<div id="vicrate_regno"></div>
+					<br/>
+					<p>
+						Même si elle connaît quelques perturbations, la tendance européenne est à la stabilité, voire à une légère décroissance. En 1970, chaque attentat tue en moyenne 2.3 personnes, contre <em>seulement</em> 0.8 en 2016.
+						Au contraire, les attentats commis en Afrique et au Moyen Orient sont clairement de plus en plus meurtrier. Faisant rarement plus de 3 victimes avant le milieu des années 1980, voire quasiment aucune dans les années 1970, chaque attentat commis dans cette région du monde fait désormais plus de 3.5 victimes.
+					</p>
+					<p>
+						L'évolution par région du caractère meurtrier des attentats ne permet donc pas non plus d'expliquer la focalisation des opinions publiques occidentales sur les attentats commis sur leurs territoires.
+					</p>
+				</div>
+			</section>
+
+			<section class="wrapper style1">
+				<header class="major">
+					<h2>Quels types d'attentats ?</h2>
+					<p>Des modes d'action stables dans le temps</p>
 				</header>
 				<div class="container">
 					<img src="images/org.png" />
-					<div id="action"></div>
-					<div id="weapon"></div>
-					<div id="vicrate"></div>
-					<div id="vicrate_reg"></div>
 				</div>
 				<div class = "text_graph">
 					<p>
 						Tempus adipiscing commodo ut aliquam blandit
 						Tempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blanditTempus adipiscing commodo ut aliquam blandit
+					</p>
+					<p>
+						Proximité spatiale et culturelle.
+						Humanité à géométrie variable ?
+						Couverture médiatique.
 					</p>
 				</div>
 			</section>
@@ -171,41 +236,43 @@
 						<div class="6u">
 							<div class="row collapse-at-2">
 								<div class="6u">
-									<h3>Accumsan</h3>
+									<!--<h3>Accumsan</h3>
 									<ul class="alt">
 										<li><a href="#">Nascetur nunc varius</a></li>
 										<li><a href="#">Vis faucibus sed tempor</a></li>
 										<li><a href="#">Massa amet lobortis vel</a></li>
 										<li><a href="#">Nascetur nunc varius</a></li>
-									</ul>
+									</ul>-->
 								</div>
 								<div class="6u">
-									<h3>Faucibus</h3>
+									<!--<h3>Faucibus</h3>
 									<ul class="alt">
 										<li><a href="#">Nascetur nunc varius</a></li>
 										<li><a href="#">Vis faucibus sed tempor</a></li>
 										<li><a href="#">Massa amet lobortis vel</a></li>
 										<li><a href="#">Nascetur nunc varius</a></li>
-									</ul>
+									</ul>-->
 								</div>
 							</div>
 						</div>
 						<div class="6u">
-							<h2>Aliquam Interdum</h2>
-							<p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
+							<h2>À propos</h2>
+							<p>
+								Cette page a été réalisée dans le cadre d'un projet de visualisation de données (« Dataviz ») pour un cours donné à l'<a href="www.ensae.fr">ENSAE</a>.
+							</p>
 							<ul class="icons">
 								<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+								<!--<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 								<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>-->
 							</ul>
 						</div>
 					</div>
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li>
+						<!--<li>&copy; Untitled. All rights reserved.</li>-->
 						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+						<!--<li>Images: <a href="http://unsplash.com">Unsplash</a></li>-->
 					</ul>
 				</div>
 			</footer>
