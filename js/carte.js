@@ -36,7 +36,7 @@ $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
       minSize: 4,
       maxSize: '12%',
       tooltip: {
-        pointFormat: '{point.properties.hc-a2}: {point.z} attentats'
+        pointFormat: '{point.properties.name}: {point.z}'
       }
     }],
 
