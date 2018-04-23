@@ -1,5 +1,5 @@
 
-$.getJSON('data/paysXattentats.json', function (data) {
+$.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
 
   Highcharts.mapChart('zeMap', {
     chart: {
