@@ -1,5 +1,5 @@
 
-$.getJSON('paysXattentats.json', function (data) {
+$.getJSON('data/paysXattentats.json', function (data) {
 
   Highcharts.mapChart('zeMap', {
     chart: {
