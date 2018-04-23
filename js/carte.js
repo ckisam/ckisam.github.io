@@ -1,7 +1,7 @@
 
 $.getJSON('paysXattentats.json', function (data) {
 
-  Highcharts.mapChart('container', {
+  Highcharts.mapChart('zeMap', {
     chart: {
       borderWidth: 0,
       map: 'custom/world'
