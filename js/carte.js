@@ -1,8 +1,9 @@
 
 $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
 
-  Highcharts.mapChart('zeMap', {
+  var optionsZeMap =  {
     chart: {
+      renderTo: 'zeMap',
       borderWidth: 0,
       map: 'custom/world'
     },
@@ -39,6 +40,11 @@ $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
       maxSize: '15%',
       tooltip: {
         pointFormat: '{point.properties.name}: {point.z}'
+      },
+      states: {
+        hover: {
+          enabled: true
+        }
       }
     }],
 
@@ -49,5 +55,7 @@ $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
     exporting: {
       enabled: false
     }
-  });
+  };
+
+  var chartZeMap = new Highcharts.mapChart(Highcharts.merge(optionsZeMap, null));
 });
