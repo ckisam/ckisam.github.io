@@ -33,6 +33,8 @@ $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
       name: "Nombre d'attentats",
       joinBy: ['iso-a3', 'code3'],
       data: data,
+      color: "#f78757",
+      marker: {},
       minSize: 1,
       maxSize: '15%',
       tooltip: {
