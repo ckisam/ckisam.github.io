@@ -57,5 +57,5 @@ $.getJSON('https://ckisam.github.io/data/paysXattentats.json', function (data) {
     }
   };
 
-  var chartZeMap = new Highcharts.mapChart(Highcharts.merge(optionsZeMap, null));
+  var chartZeMap = new Highcharts.mapChart(Highcharts.merge(optionsZeMap, darkTheme));
 });

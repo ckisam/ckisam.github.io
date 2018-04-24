@@ -60,5 +60,5 @@ $(function () {
       data: [0,25,1,0,1,0,2,0,6,5,2,1,1,3,12,2,9,1,22,37,16,39,356,266,176,121,111,119,111,42,26,43,5,3,40,30,6,1,43,196,15,32,33,62,331,138,52]
     }]
   };
-  var chartMapEvol = new Highcharts.Chart(Highcharts.merge(optionsMapEvol, darkTheme));
+  var chartMapEvol = new Highcharts.Chart(Highcharts.merge(optionsMapEvol, null));
 });
