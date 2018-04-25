@@ -1114,3 +1114,10 @@
 		div, img {
 			max-width: 100%;
 		}
+
+		img.orgaTerroImg {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 952px;
+		}
